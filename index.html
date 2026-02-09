@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omani Arabic Lexicon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Omani Arabic Lexicon</h1>
+            <p class="subtitle">Searchable dictionary of Omani Arabic · 6,753 entries</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search in Arabic (ابو), transliteration (abu), root (ʔbw), or definition..."
+                    autocomplete="off"
+                    dir="auto"
+                >
+                <button id="clearSearch" class="clear-btn" style="display: none;">✕</button>
+            </div>
+            
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label for="filterPos">Part of Speech:</label>
+                    <select id="filterPos">
+                        <option value="">All</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="filterSem">Semantic Category:</label>
+                    <select id="filterSem">
+                        <option value="">All</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="filterDialect">Dialect:</label>
+                    <select id="filterDialect">
+                        <option value="">All</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group checkbox-group">
+                    <label>
+                        <input type="checkbox" id="filterMissingRoot">
+                        Show only entries missing root
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="view-toggle">
+            <button id="listViewBtn" class="view-btn active">List View</button>
+            <button id="rootViewBtn" class="view-btn">Browse by Root</button>
+        </div>
+
+        <div class="results-info">
+            <span id="resultsCount">Loading...</span>
+        </div>
+
+        <div id="listView" class="results-container">
+            <!-- Results will be inserted here -->
+        </div>
+
+        <div id="rootView" class="root-view" style="display: none;">
+            <!-- Root browser will be inserted here -->
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+    <script src="search.js"></script>
+</body>
+</html>
